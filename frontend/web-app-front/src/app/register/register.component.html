@@ -1,0 +1,46 @@
+<!--register wrapper-->
+<div class="register-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+  
+      <form class="register-form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+  
+        <mat-card-content>
+          <mat-form-field class="register-full-width">
+            <input type="text" placeholder="FirstName" formControlName="firstName" matInput name="first name" required>
+          </mat-form-field>
+  
+          <mat-form-field class="register-full-width">
+            <input type="text" placeholder="LastName" formControlName="lastName" matInput name="last name">
+          </mat-form-field>
+  
+          <mat-form-field class="register-full-width">
+            <input placeholder="DoB" formControlName="dob" matInput [matDatepicker]="picker" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+  
+          <mat-form-field class="register-full-width">
+            <input type="email" placeholder="Email" formControlName="email" matInput name="email" required>
+          </mat-form-field>
+  
+          <mat-form-field class="register-full-width">
+            <input type="password" placeholder="Password" formControlName="password" matInput name="password" required>
+          </mat-form-field>
+  
+        </mat-card-content>
+  
+        <div class="register-button">
+          <button type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
+        </div>
+  
+        <div class="cancel-button">
+          <button mat-stroked-button class="btn-block" routerLink="/login" routerLinkActive="active">Cancel</button>
+        </div>
+  
+      </form>
+    </mat-card>
+  </div>
+  

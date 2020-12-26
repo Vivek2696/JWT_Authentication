@@ -1,2 +1,15 @@
-
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <button mat-icon-button routerLink="login" routerLinkActive="active">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>{{title}}</span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent">
+      Account
+    </button>
+</mat-toolbar>
+  
+<!--App container-->
+<div class="app-container">
+    <router-outlet></router-outlet>
+</div>
