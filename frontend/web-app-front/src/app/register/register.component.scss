@@ -27,6 +27,11 @@
   .register-wrapper .register-full-width,.register-wrapper .btn-block{
     width:100%;
   }
+
+  .password-match-block{
+    width: 100%;
+    color: red;
+  }
   
   .register-wrapper mat-card-header{
     text-align:center;

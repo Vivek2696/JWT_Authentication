@@ -12,7 +12,7 @@ import { User } from '../../models/User' //For example we need user data type he
 export class LoginService {
 
   //TO DO: URL
-  private loginUrl = 'http://localhost:####'; //update URL
+  private loginUrl = 'http://localhost:49411/api/auth/login'; //update URL
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -23,8 +23,8 @@ export class LoginService {
   ) {
   }
 
-  authenticateUser(data: any): Observable<User>{
-    return this.http.post<User>(this.loginUrl, data, this.httpOptions).pipe(
+  authenticateUser(data: any): Observable<any>{
+    return this.http.post<any>(this.loginUrl, data, this.httpOptions).pipe(
       tap((newUser)=> {console.log('User Authenticated')}),
       catchError(this.handleError<User>('login'))
     )

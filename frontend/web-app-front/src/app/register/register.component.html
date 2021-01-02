@@ -29,15 +29,23 @@
           <mat-form-field class="register-full-width">
             <input type="password" placeholder="Password" formControlName="password" matInput name="password" required>
           </mat-form-field>
+
+          <mat-form-field class="register-full-width">
+            <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" matInput name="confirmPassword" required>
+          </mat-form-field>
+
+          <mat-label *ngIf="!samePasswords" class="password-match-block">
+            Password do not match!
+          </mat-label>
   
         </mat-card-content>
   
         <div class="register-button">
-          <button type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
+          <button [disabled]="isLoading" type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
         </div>
   
         <div class="cancel-button">
-          <button mat-stroked-button class="btn-block" routerLink="/login" routerLinkActive="active">Cancel</button>
+          <button [disabled]="isLoading" mat-stroked-button class="btn-block" routerLink="/login" routerLinkActive="active">Cancel</button>
         </div>
   
       </form>
