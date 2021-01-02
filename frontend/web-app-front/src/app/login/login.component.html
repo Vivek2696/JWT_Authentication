@@ -20,18 +20,15 @@
   
         </mat-card-content>
         <div class="login-button">
-          <button type="submit" mat-stroked-button color="accent" class="btn-block" [disabled]="isLoading">Sign in</button>
-          <!--<button mat-stroked-button color="accent" class="btn-block" (click) = "authUser()" [disabled]="isLoading">Log in</button>-->
+          <button [disabled]="isLoading" type="submit" mat-stroked-button color="accent" class="btn-block" [disabled]="isLoading">Sign in</button>
         </div>
   
         <div class="register-content">
           <p class="register-text">First time user?</p>
-          <a mat-button mat-raised-button class="register-link" routerLink="/register" routerLinkActive="active">Register</a>
+          <a mat-button mat-raised-button [disabled]="isLoading" class="register-link" routerLink="/register" routerLinkActive="active">Register</a>
         </div>
   
       </form>
-  
-      <mat-spinner *ngIf="isLoading"></mat-spinner>
   
     </mat-card>
   

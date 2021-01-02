@@ -12,7 +12,7 @@ import { User } from '../../models/User';
 export class RegisterService {
 
   //TO DO: Change URL
-  private loginUrl = 'http://localhost:####';
+  private loginUrl = 'http://localhost:49411/api/user/register';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -23,10 +23,10 @@ export class RegisterService {
   ) {
   }
 
-  registerUser(data: any): Observable<User>{
-    return this.http.post<User>(this.loginUrl, data, this.httpOptions).pipe(
-      tap((newUser: User) => console.log('user registered!')),
-      catchError(this.handleError<User>('login'))
+  registerUser(data: any): Observable<any>{
+    return this.http.post<any>(this.loginUrl, data, this.httpOptions).pipe(
+      tap((res) => console.log('user registered!')),
+      catchError(this.handleError<any>('login'))
     );
   }
 
